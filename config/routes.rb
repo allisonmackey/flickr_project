@@ -2,6 +2,7 @@ Rails.application.routes.draw do
    root to:'pages#home'
 
   get '/home' => 'pages#home'
+  get '/feed' => 'pages#feed'
 
   # devise_for :users
   devise_for :users, controllers: { 

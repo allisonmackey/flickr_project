@@ -11,6 +11,15 @@ class Users::SessionsController < Devise::SessionsController
   #POST /resource/sign_in
   def create
     super
+      @user = User.current_user
+      if @user 
+        session[:user_id] = @user.id
+        render :feed
+        # redirect_to '../pages/feed'
+      else 
+        flash[:alert] = "Looks like you're not a user, you should probably sign up!"
+        redirect_to '/home'
+      end
   end
 
   #DELETE /resource/sign_out
