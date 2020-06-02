@@ -40,7 +40,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 
-# gem 'devise'
+gem 'devise'
 ## devise gem for authenticating your app
 gem 'faker' 
 ## faker gem is for seeding your database 
