@@ -10,9 +10,13 @@
     <% @users.each do |user| %>
       <% if user.images.attached? %>
         <% user.images.each do | image | %>
-          <%= image_tag image %>
+          <%=image_tag image %>
+            <% if current_user && current_user.admin %>
+              <%= link_to "Delete", { controller: "pages", action: "delete", id: image}, method: :delete %>
+          <% end %>
         <% end %>
       <% end %>
     <% end %>
   <% end %>
 </div>
+

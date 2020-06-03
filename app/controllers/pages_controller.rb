@@ -5,11 +5,8 @@ class PagesController < ApplicationController
    end
   end
 
-  def user_profile
-    # binding.pry
-   
+  def user_profile 
   end
-
 
   def add_photos
     if params[:submit]
@@ -28,7 +25,15 @@ class PagesController < ApplicationController
     redirect_to new_user_registration
    end
   end
-  
 
+  def delete
+    # binding.pry
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
+  
+    redirect_to feed_path
+  end
+  
+  
   
 end

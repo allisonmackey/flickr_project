@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/user_profile' => 'pages#user_profile'
   get '/add_photos' => 'pages#add_photos'
   post '/add_photos' => 'pages#add_photos'
+  delete '/delete' => 'pages#delete'
 
   # devise_for :users
   devise_for :users, controllers: { 
