@@ -10,16 +10,16 @@ class Users::SessionsController < Devise::SessionsController
 
   #POST /resource/sign_in
   def create
+    # after_sign_in_path_for(user_session_path)
     super
-      @user = User.current_user
-      if @user 
-        session[:user_id] = @user.id
-        render :feed
-        # redirect_to '../pages/feed'
-      else 
-        flash[:alert] = "Looks like you're not a user, you should probably sign up!"
-        redirect_to '/home'
-      end
+      # @user = current_user
+      # if @user 
+      #   session[:user_id] = @user.id
+      #   render :feed
+      #   # redirect_to '../pages/feed'
+      # else 
+      #   flash[:alert] = "Looks like you're not a user, you should probably sign up!"
+      #   redirect_to '/home'
   end
 
   #DELETE /resource/sign_out

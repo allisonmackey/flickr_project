@@ -1,2 +1,7 @@
 <h1> Some pictures will eventually go here!</h1>
-
+   <% if current_user %>
+      <%= current_user.email %> | <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete  %> |
+      <%= link_to "Profile", user_profile_path %>
+    <% else %>
+      <%= link_to "SIGN UP", new_user_registration_path %> | <%= link_to "SIGN IN", new_user_session %>
+    <% end %>
