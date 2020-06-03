@@ -12,19 +12,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    @user = current_user
-    @user.profile_photo.attach(params[:user][:profile_photo])
+    current_user.profile_photo.attach(params[:user][:profile_photo])
     # binding.pry
   end
 
   # GET /resource/edit
   def edit
     super
+
   end
 
   # PUT /resource
   def update
     super
+    current_user.profile_photo.attach(params[:user][:profile_photo])
   end
 
   # DELETE /resource

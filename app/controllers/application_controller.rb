@@ -13,6 +13,12 @@ class ApplicationController < ActionController::Base
   #   }
   # end
 
+  # def all_users_photos 
+  #   all_photos = User.all.uploaded_photos
+  # end
+
+  
+
   def after_sign_in_path_for(resource)
     feed_path
   end

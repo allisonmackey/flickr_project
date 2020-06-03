@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/home' => 'pages#home'
   get '/feed' => 'pages#feed'
   get '/user_profile' => 'pages#user_profile'
+  get '/add_photos' => 'pages#add_photos'
+  post '/add_photos' => 'pages#add_photos'
 
   # devise_for :users
   devise_for :users, controllers: { 
