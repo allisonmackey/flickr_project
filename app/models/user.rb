@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_one_attached :profile_photo
   has_many_attached :images
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # devise_for :users
   devise_for :users, controllers: { 
     sessions: 'users/sessions',
-    # registrations: 'users/registrations',
+    registrations: 'users/registrations',
     # confirmations: 'users/confirmations',
     # omniauthcallbacks: 'users/omniauthcallbacks',
     # passwords: 'users/passwords',

@@ -1,3 +1,10 @@
 <h1><%= current_user.email %></h1>
+<div>
+  <% if current_user.profile_photo.attached? %>
+    <%= image_tag current_user.profile_photo %>
+  <% end %>
+</div>
 
 <p>user's pictures will go here!</p>
+
+<%= link_to "Edit Profile", edit_user_registration_path %>
