@@ -1,8 +1,8 @@
-<form action="/add_photos" class="new_photo" id="new_photo" method="post"><%= token_tag %> 
+<form enctype="multipart/form-data" action="/add_photos" class="new_photo" id="new_photo" method="post"><%= token_tag %> 
   <div class="form-row">
     <div class="form-group col-md-4">
       <label for="inputName">Photo</label>
-      <input type="file" class="form-control" id="user_images" placeholder="Name" name= "user[images]">
+      <input type="file" class="form-control" id="user_images" placeholder="Name" name= "user[images]" multiple>
     </div>
 
   <button type="submit" name="submit" class="btn btn-primary">Add Photo</button>

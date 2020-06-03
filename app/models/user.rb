@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_one_attached :profile_photo
   has_many_attached :images
+
+  scope :by_time, -> { order(created_at: :dec) }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise  :database_authenticatable, 

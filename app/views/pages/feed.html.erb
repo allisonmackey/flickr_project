@@ -5,3 +5,14 @@
     <% else %>
       <%= link_to "SIGN UP", new_user_registration_path %> | <%= link_to "SIGN IN", new_user_session %>
     <% end %>
+<div>
+  <% if @users.any?  %>
+    <% @users.each do |user| %>
+      <% if user.images.attached? %>
+        <% user.images.each do | image | %>
+          <%= image_tag image %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

@@ -5,7 +5,16 @@
   <% end %>
 </div>
 
+<div>
+  <% if current_user.images.attached? %>
+    <% current_user.images.each do |image| %>
+      <%= image_tag image%>
+    <% end %>
+  <% end %>
+</div>
+
 <p>user's pictures will go here!</p>
 
 <%= link_to "Edit Profile", edit_user_registration_path %>
 <%= link_to "Add Photos", add_photos_path %>
+<%= link_to "Home", feed_path %>
